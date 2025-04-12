@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h2>Panel de Administración</h2>
+    <table border="1">
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Fecha de registro</th>
+        </tr>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.createdAt ? user.createdAt.toLocaleString() : 'Sin fecha' %></td>
+            </tr>
+        <% }) %>
+    </table>
+    <a href="/login">Cerrar sesión</a>
+</body>
+</html>
